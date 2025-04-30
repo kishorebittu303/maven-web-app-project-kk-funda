@@ -21,7 +21,7 @@
 		<spring.version>5.3.34</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://16.16.24.160:9000/</sonar.host.url>
+		<sonar.host.url>http://51.21.249.85:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>bittu</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,7 +98,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>KK FUNDA Releases Nexus Repository</name>
-	      <url>http://13.60.6.166:8081/repository/bittu-release/</url>
+	      <url>http://13.60.254.211:8081/repository/bittu-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
