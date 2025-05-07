@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to bittu devops classes</h1>
-<h1 align="center"> thank u lord jesus he is my dad and he is my hero sorry dad</h1>
+<h1 align="center"> thank u lord jesus he is my dad and he is my hero sorry dad i am doing mistakes </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
