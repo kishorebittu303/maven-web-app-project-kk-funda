@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: 'development',
+                git branch: 'qa',
                     credentialsId: '1a0b9413-034f-4592-9a97-116fb115ae6a',
                     url: 'https://github.com/kishorebittu303/maven-web-app-project-kk-funda.git'
             }
