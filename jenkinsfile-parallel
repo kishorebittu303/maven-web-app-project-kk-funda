@@ -1,0 +1,57 @@
+pipeline { 
+    agent any 
+    tools {
+        maven "maven3.9.9"
+    }
+    environment {
+        TOMCAT_USER = 'bittu'
+        TOMCAT_PASS = 'bittu'
+        TOMCAT_HOST = 'http://13.61.148.150:8080'
+        WAR_FILE    = 'target/maven-web-application.war'
+    }
+    stages{
+        stage('vcs') {
+            steps{ 
+            git url: 'https://github.com/kishorebittu303/maven-web-app-project-kk-funda.git', branch: 'development'
+        }
+        } // stage vcs is ended here
+        stage('build parallel'){
+            parallel {
+                stage('build'){
+                    steps{
+                        sh "mvn clean package"
+                    }
+                } // stage build is complted
+                stage('sonar-reports'){
+                    steps{
+                        sh "mvn sonar:sonar"
+                    }
+                } // here sonar stage is complerd
+
+
+            }// parallel is ended here
+        }
+        stage('parallel nexus and tomcat') {
+            parallel {
+                stage('jfrog-tomcat'){ 
+                    steps{
+                        sh 'mvn clean deploy'
+                    }
+                } // here jfrog stage
+               stage('deploying-to-tomcat') {
+                 steps {
+                    sh """
+                    curl -u ${TOMCAT_USER}:${TOMCAT_PASS} \
+                        --upload-file "${WAR_FILE}" \
+                        "${TOMCAT_HOST}/manager/text/deploy?path=/myapp&update=true"
+                    """
+                  }
+              }  
+            }
+        }
+        
+
+    } // here stages ends 
+
+
+} // pipeline ends here
