@@ -1,0 +1,25 @@
+@Library('shared-bittu-lib') _
+
+pipeline {
+    agent any
+    tools {
+        maven "maven3.9.9"
+    }
+    stages {
+        stage('Clone Repo') {
+            steps { 
+                git url: 'https://github.com/kishorebittu303/maven-web-app-project-kk-funda.git', branch: 'development'
+            }
+        }
+        stage('Compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        stage('Sonar') {
+            steps {
+                sonar() // This should exist in vars/sonar.groovy
+            }
+        }
+    }
+}
