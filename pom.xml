@@ -23,7 +23,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<sonar.host.url>http://44.244.204.51:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
-		<sonar.password>bittu</sonar.password> 
+		<sonar.password>bittu</sonar.password>  
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>http://13.50.111.31:8081/artifactory/webapp/#/artifacts/browse/tree/General/libs-release</id>
 	      <name>KK FUNDA Releases Nexus Repository</name>
-	      <url>http://44.244.204.51:8081/nexus/content/repositories/release-id/</url>
+	      <url>http://13.50.111.31:8081/artifactory/libs-release-local</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>http://13.50.111.31:8081/artifactory/webapp/#/artifacts/browse/tree/General/libs-snapshot</id>
 	      <name>KK FUNDA Snapshot Nexus Repository </name>
-	      <url>http://44.244.204.51:8081/nexus/content/repositories/snapshots-1/</url>
+	      <url>http://13.50.111.31:8081/artifactory/libs-snapshot-local</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -146,6 +146,11 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
+			<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>3.3.2</version> <!-- ✅ Upgrade this -->
+    </plugin>
 			
 </plugins>
 	</build>
