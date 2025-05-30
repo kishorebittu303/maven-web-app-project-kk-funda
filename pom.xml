@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>http://44.244.204.51:8081/nexus/#/artifacts/browse/tree/General/libs-release</id>
 	      <name>KK FUNDA Releases Nexus Repository</name>
-	      <url>http://13.50.111.31:8081/artifactory/libs-release-local</url>
+	      <url>http://44.244.204.51:8081/nexus/content/repositories/release-id/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>http://44.244.204.51:8081/nexus/#/artifacts/browse/tree/General/libs-snapshot</id>
 	      <name>KK FUNDA Snapshot Nexus Repository </name>
-	      <url>http://13.50.111.31:8081/artifactory/libs-snapshot-local</url>
+	      <url>http://44.244.204.51:8081/nexus/content/repositories/snapshots-1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
